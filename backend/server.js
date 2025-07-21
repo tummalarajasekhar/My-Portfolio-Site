@@ -5,7 +5,7 @@ const nodemailer = require("nodemailer");
 require("dotenv").config();
 
 if (!process.env.EMAIL|| !process.env.PASSWORD) {
-    console.log(EMAIL, PASSWORD);
+    
     console.error("ERROR: USER or PASSWORD environment variable is missing.");
     process.exit(1);
 }
