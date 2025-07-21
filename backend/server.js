@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
-
+console.log(process.env.EMAIL, process.env.PASSWORD);
 if (!process.env.EMAIL|| !process.env.PASSWORD) {
     
     console.error("ERROR: USER or PASSWORD environment variable is missing.");
@@ -30,11 +30,12 @@ app.post("/submit-form", async (req, res) => {
 
 
     // Configure the email transporter
+
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
             user: process.env.EMAIL, // Imported from environment variable
-            pass: process.env.PASSWORD, // Imported from environment variable (ensure your .env uses PASSWORD, not PASSword)
+            pass: process.env.PASSWORD, // Use an App Password if 2-Step Verification is enabled
         },
     });
 
