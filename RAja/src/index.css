@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+.navbar{
+    @apply text-2xl p-3 text-black dark:text-white rounded-full 
+}
+.active-nav{
+    @apply text-white bg-black dark:bg-white dark:text-black rounded-full shadow-2xl
+}
+.medium{
+    @apply w-[40%]
+}
+body{
+    @apply bg-gray-300 dark:bg-black
+}
+.icons{
+    @apply  hover:scale-110 transition-all duration-300 hover:-translate-y-1  cursor-pointer mb-2 
+
+}
+.left-right-arrow{
+    @apply  text-black dark:text-white   text-4xl mt-5 flex justify-center items-center
+
+}
+.contactdetails{
+    @apply  font-semibold p-4 ml-[25%] text-xl
+
+}
+
+
+
+

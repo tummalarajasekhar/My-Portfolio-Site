@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" class="dark" id='DLMode'>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/rajaicon.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAJA SEKHAR</title>
+   
+  </head>
+  
+  <body class="raja" >
+    <div id="root"></div>
+   
+    <script>
+      const audioMap = {};
+
+const preloadSounds = () => {
+  const keys = ['R', 'A', 'J', 'S', 'E', 'K', 'H' ]; // all keys used
+  keys.forEach(key => {
+    const audio = new Audio(`./sounds/${key}.mp3`);
+    audio.load(); // preload
+    audioMap[key] = audio;
+  });
+};
+
+preloadSounds();
+     
+document.addEventListener("keydown", (e) => {
+  const key = e.key.toUpperCase();
+  const span = document.querySelector(`.note[data-note="${key}"]`);
+
+  if (span && audioMap[key]) {
+    const sound = audioMap[key];
+    sound.currentTime = 0; // rewind to start
+    sound.play();
+
+    span.classList.add("active");
+    setTimeout(() => span.classList.remove("active"), 200);
+  }
+});
+</script>
+    
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
