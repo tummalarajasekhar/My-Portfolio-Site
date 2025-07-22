@@ -26,7 +26,7 @@ function Contact() {
     setError('');
     try {
       console.log('Form data:', form);
-      const response = await fetch('http://localhost:3000/submit-form', {
+      const response = await fetch('http://56.228.26.159:3000/submit-form', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)

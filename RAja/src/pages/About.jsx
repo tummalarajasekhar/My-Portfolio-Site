@@ -1,5 +1,5 @@
 import React from 'react';
-import aboutMe from '../assets/raja.avif';
+import aboutMe from '../assets/unnamed2.jpg'; // Adjust the path as necessary
 
 function About() {
   return (
@@ -8,7 +8,7 @@ function About() {
       <img
         src={aboutMe}
         alt="About background"
-        className="absolute inset-0 w-full h-full object-cover object-top"
+        className="absolute inset-0 w-full h-full object-cover "
       />
 
       {/* Dark overlay */}

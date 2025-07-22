@@ -26,7 +26,7 @@ const handleClick = (e) => {
 }
 
  
-  console.log(click)
+  // console.log(click)
   return (
     <>
        

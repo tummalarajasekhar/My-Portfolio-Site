@@ -6,11 +6,24 @@ import { Outlet } from 'react-router-dom';
 
 
 function App() {
+  const [isImageLoaded, setIsImageLoaded] = React.useState(false);
+
+  React.useEffect(() => {
+    const img = new Image();
+    img.src = '/assets/rajaEdit.webp'; // Adjust the path as necessary
+    img.onload = () => {
+      setIsImageLoaded(true);
+    };
+  }, []);
   return (
     <>
+    {!isImageLoaded && (
+      <div>
       <Navbar />
       <DarkLightMode />
       <Outlet />
+    </div>
+    )}
     </>
   );
 }

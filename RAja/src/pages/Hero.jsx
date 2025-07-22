@@ -6,8 +6,19 @@ import DarkLightMode from '../Components/DarkLightMode'
 import Sign from '../Components/Sign'
 
 function Hero() {
+   const [isImageLoaded, setIsImageLoaded] = React.useState(false);
+
+  React.useEffect(() => {
+    const img = new Image();
+    img.src = '/assets/rajaEdit.webp'; // Adjust the path as necessary
+    img.onload = () => {
+      setIsImageLoaded(true);
+    };
+  }, []);
   
   return (
+    <>
+     {!isImageLoaded && (
     <div className=' overflow-hidden '>
     <Sign/>
     <div id="music-keyboard">
@@ -42,6 +53,8 @@ function Hero() {
     👋 Try typing my name on your keyboard 🎹
 </p>
     </div>
+     )}
+     </>
   )
 }
 

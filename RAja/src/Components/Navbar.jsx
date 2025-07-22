@@ -16,7 +16,7 @@ function Navbar() {
     // console.log(str)
     setPath(str)
   }
-  console.log(path)
+  // console.log(path)
   return (
 
     <>
